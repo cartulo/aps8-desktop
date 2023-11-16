@@ -74,7 +74,6 @@ namespace Aps8.Desktop
 
                 HttpResponseMessage response = await client.PostAsync(urlFull, null);
 
-                // Verifica se a solicitação foi bem-sucedida
                 if (response.IsSuccessStatusCode)
                 {
                     string responseBody = await response.Content.ReadAsStringAsync();
@@ -83,7 +82,6 @@ namespace Aps8.Desktop
                 else
                 {
                     Console.WriteLine($"Falha na solicitação POST. Código de status: {response.StatusCode}");
-                    // Adiciona mais informações para ajudar a diagnosticar o problema, se necessário
                     Console.WriteLine("Conteúdo da resposta: " + await response.Content.ReadAsStringAsync());
                 }
             }
